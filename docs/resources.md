@@ -490,10 +490,11 @@ Many scales are freely available for research use. Check:
 Found a useful resource not listed here? Please contribute:
 - Open an issue on the repository
 - Submit a pull request with additions
-- Email suggestions to repository maintainer
+- Email suggestions to maintainer: vpst18@gmail.com
 
 ---
 
 **Last Updated:** October 2025
+**Maintained by:** Vinay Thakur (vpst18@gmail.com)
 
 **Note:** URLs and availability may change. If you find broken links, please report them.
