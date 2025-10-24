@@ -6,7 +6,7 @@
 
 ## About This Repository
 
-This repository serves as an accessible reference guide for **researchers, practitioners, students, HR professionals, consultants, and anyone** working with measurement scales. Whether you're developing a new scale, selecting an existing validated scale for your work, or evaluating scales for reliability and validity, this documentation provides:
+This repository serves as an accessible reference guide for **researchers, practitioners, students, corporate professionals, consultants, and anyone** working with measurement scales. Whether you're developing a new scale, selecting an existing validated scale for your work, or evaluating scales for reliability and validity, this documentation provides:
 
 - **Evidence-based guidelines** for scale development and validation
 - **Public databases** of validated scales you can use
