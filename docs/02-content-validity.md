@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Content Validity
 
 ## Overview

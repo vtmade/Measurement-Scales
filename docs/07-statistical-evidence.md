@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Statistical Evidence & Reporting
 
 ## Overview

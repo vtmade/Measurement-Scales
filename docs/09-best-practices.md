@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Best Practices & Guidelines
 
 ## Overview

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Finding & Reusing Validated Scales
 
 ## Overview

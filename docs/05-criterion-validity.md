@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Criterion Validity
 
 ## Overview

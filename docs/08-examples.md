@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Real-World Examples & Case Studies
 
 ## Overview

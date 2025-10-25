@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Validation Timeline & Practical Process
 
 ## Overview

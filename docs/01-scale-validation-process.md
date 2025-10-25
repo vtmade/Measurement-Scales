@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Scale Validation Process Overview
 
 ## Introduction

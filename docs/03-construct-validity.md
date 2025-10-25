@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Construct Validity
 
 ## Overview

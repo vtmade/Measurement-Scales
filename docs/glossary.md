@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Glossary of Terms
 
 ## A
