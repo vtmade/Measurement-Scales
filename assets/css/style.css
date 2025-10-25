@@ -1,0 +1,691 @@
+/*
+ * Measurement Scales Reference Guide
+ * Professional Design - Black, White, Grey
+ * Version 1.0
+ */
+
+/* ========================================
+   CSS Variables & Reset
+   ======================================== */
+
+:root {
+    --color-black: #000000;
+    --color-grey-900: #1a1a1a;
+    --color-grey-800: #2d2d2d;
+    --color-grey-700: #404040;
+    --color-grey-600: #666666;
+    --color-grey-500: #808080;
+    --color-grey-400: #999999;
+    --color-grey-300: #cccccc;
+    --color-grey-200: #e6e6e6;
+    --color-grey-100: #f5f5f5;
+    --color-white: #ffffff;
+
+    --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+
+    --border-radius: 4px;
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-grey-800);
+    background-color: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--color-black);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--color-grey-600);
+}
+
+code {
+    font-family: var(--font-mono);
+    background-color: var(--color-grey-100);
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--border-radius);
+    font-size: 0.9em;
+}
+
+/* ========================================
+   Layout Components
+   ======================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-dark {
+    background-color: var(--color-grey-900);
+    color: var(--color-white);
+}
+
+.section-dark h2,
+.section-dark h3,
+.section-dark h4 {
+    color: var(--color-white);
+}
+
+.section-dark a {
+    color: var(--color-grey-300);
+}
+
+.section-dark a:hover {
+    color: var(--color-white);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+
+.navbar {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--spacing-sm) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand h1 {
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin: 0;
+}
+
+.nav-brand .tagline {
+    font-size: 0.8rem;
+    color: var(--color-grey-400);
+    margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-md);
+}
+
+.nav-menu a {
+    color: var(--color-grey-300);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-menu a:hover {
+    color: var(--color-white);
+    border-bottom-color: var(--color-white);
+}
+
+/* ========================================
+   Hero Section
+   ======================================== */
+
+.hero {
+    background: linear-gradient(135deg, var(--color-grey-900) 0%, var(--color-black) 100%);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-grey-300);
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 2px solid;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-grey-200);
+    border-color: var(--color-grey-200);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+/* ========================================
+   Notice Section
+   ======================================== */
+
+.notice {
+    background-color: var(--color-grey-100);
+    border-left: 4px solid var(--color-black);
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.notice .container {
+    display: flex;
+    align-items: start;
+    gap: var(--spacing-md);
+}
+
+.notice-icon {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-black);
+}
+
+.notice-content h3 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-xs);
+}
+
+.notice-content p {
+    margin: 0;
+    color: var(--color-grey-700);
+}
+
+/* ========================================
+   Grid Layouts
+   ======================================== */
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* ========================================
+   Cards
+   ======================================== */
+
+.card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-grey-300);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--box-shadow);
+    border-color: var(--color-black);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-black);
+}
+
+.card h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ========================================
+   Impact Cards
+   ======================================== */
+
+.impact-card {
+    background-color: var(--color-grey-800);
+    border: 1px solid var(--color-grey-700);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+}
+
+.impact-card h3 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-grey-600);
+    padding-bottom: var(--spacing-xs);
+}
+
+.impact-list {
+    list-style: none;
+    color: var(--color-grey-300);
+}
+
+.impact-list li {
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-sm);
+    position: relative;
+}
+
+.impact-list li:before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: var(--color-grey-500);
+}
+
+/* ========================================
+   Documentation Cards
+   ======================================== */
+
+.doc-category {
+    margin-bottom: var(--spacing-lg);
+}
+
+.category-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-grey-300);
+}
+
+.doc-card {
+    display: block;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-grey-300);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    transition: var(--transition);
+    position: relative;
+}
+
+.doc-card:hover {
+    border-color: var(--color-black);
+    box-shadow: var(--box-shadow);
+    transform: translateY(-2px);
+}
+
+.doc-card.featured {
+    border: 2px solid var(--color-black);
+    background-color: var(--color-grey-100);
+}
+
+.doc-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-xs);
+}
+
+.doc-card h4 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-black);
+}
+
+.doc-card p {
+    font-size: 0.9rem;
+    color: var(--color-grey-600);
+    margin-bottom: 0;
+}
+
+.doc-badge {
+    display: inline-block;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-xs);
+}
+
+/* ========================================
+   Pathway Cards
+   ======================================== */
+
+.pathway-card {
+    background-color: var(--color-grey-800);
+    border: 1px solid var(--color-grey-700);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+}
+
+.pathway-card h3 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.pathway-list {
+    list-style: none;
+    counter-reset: pathway;
+}
+
+.pathway-list li {
+    counter-increment: pathway;
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.pathway-list li:before {
+    content: counter(pathway);
+    position: absolute;
+    left: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.pathway-list a {
+    color: var(--color-grey-300);
+}
+
+.pathway-list a:hover {
+    color: var(--color-white);
+}
+
+/* ========================================
+   Stats Section
+   ======================================== */
+
+.stats {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--spacing-lg) 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--color-grey-400);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   Citation Section
+   ======================================== */
+
+.citation-box {
+    background-color: var(--color-grey-100);
+    border: 1px solid var(--color-grey-300);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.citation-box code {
+    display: block;
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-grey-300);
+    font-size: 0.9rem;
+    word-break: break-all;
+}
+
+/* ========================================
+   Contact Cards
+   ======================================== */
+
+.contact-card {
+    background-color: var(--color-grey-800);
+    border: 1px solid var(--color-grey-700);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+}
+
+.contact-card h3 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-card p {
+    color: var(--color-grey-300);
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-card ul {
+    list-style: none;
+    color: var(--color-grey-300);
+}
+
+.contact-card li {
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-sm);
+    position: relative;
+}
+
+.contact-card li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--color-grey-500);
+}
+
+.repo-link {
+    color: var(--color-grey-300);
+    word-break: break-all;
+}
+
+.version {
+    font-size: 0.85rem;
+    color: var(--color-grey-500);
+    margin-top: var(--spacing-xs);
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-grey-400);
+    padding: var(--spacing-md) 0;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .navbar .container {
+        justify-content: center;
+    }
+
+    .grid-3,
+    .doc-grid,
+    .stat-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notice .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section {
+        padding: var(--spacing-md) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
